@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quán Hải Sản Phố Nướng Châu Đốc - Tươi Ngon, Giá Gốc</title>
+    <style>
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+            /* NỀN ĐỘNG XANH LÁ SINH THÁI CỰC MẠNH */
+            background: linear-gradient(-45deg, #e8f5e9, #c8e6c9, #a5d6a7, #e0f2f1);
+            background-size: 400% 400%;
+            animation: gradientBg 12s ease infinite;
+            overflow-x: hidden;
+        }
+        @keyframes gradientBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* HEADER & NAVBAR VỚI HIỆU ỨNG PHÁT SÁNG XANH LÁ */
+        header {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 25px rgba(46, 125, 50, 0.25), 0 0 15px rgba(76, 175, 80, 0.3);
+            border-bottom: 2px solid #4caf50;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 0;
+        }
+        .nav-block {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            width: 38%;
+        }
+        .nav-block.left { justify-content: flex-start; }
+        .nav-block.right { justify-content: flex-end; }
+        
+        .nav-block li { margin: 0 18px; }
+        .nav-block a {
+            font-weight: 800;
+            color: #1b5e20;
+            position: relative;
+            padding: 8px 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            transition: all 0.3s ease;
+        }
+        .nav-block a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 4px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #00e676, #2e7d32);
+            box-shadow: 0 0 8px #00e676;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        .nav-block a:hover {
+            color: #00e676;
+            text-shadow: 0 0 10px rgba(0,230,118,0.5);
+        }
+        .nav-block a:hover::after { width: 100%; }
+        
+        /* KHU VỰC LOGO CHÍNH GIỮA */
+        .logo-center {
+            width: 24%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .logo-center::before {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 230, 118, 0.45);
+            border-radius: 50%;
+            filter: blur(25px);
+            z-index: -1;
+            animation: pulseGlow 2s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { transform: scale(0.85); opacity: 0.5; }
+            100% { transform: scale(1.15); opacity: 0.85; filter: blur(30px); }
+        }
+        .logo-img {
+            height: 130px;
+            width: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply; 
+            filter: drop-shadow(0px 4px 10px rgba(0, 230, 118, 0.5));
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        .logo-img:hover {
+            transform: scale(1.12) rotate(2deg);
+            filter: drop-shadow(0px 6px 15px rgba(0, 230, 118, 0.8));
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.tgdd.vn/2021/04/CookProduct/13-1200x676.jpg') no-repeat center center/cover;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 130px;
+            overflow: hidden;
+        }
+        .hero-content {
+            z-index: 2;
+            padding: 0 20px;
+        }
+        .hero-content h1 {
+            font-size: 58px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 
+                0 1px 0 #cccccc, 0 2px 0 #c5c5c5, 0 3px 0 #bbbbbb, 0 4px 0 #b4b4b4, 0 5px 0 #aaaaaa, 
+                0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 
+                0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 
+                0 20px 20px rgba(0,0,0,.15), 0 0 20px rgba(0, 230, 118, 0.4);
+            animation: floatText 4s ease-in-out infinite;
+        }
+        @keyframes floatText {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .hero-content p {
+            font-size: 24px;
+            margin-bottom: 35px;
+            font-weight: 600;
+            text-shadow: 1px 2px 10px rgba(0,0,0,0.9);
+            color: #e8f5e9;
+        }
+        
+        /* CẬP NHẬT NÚT BẤM "ĐẶT BÀN NGAY" */
+        .btn {
+            background: linear-gradient(135deg, #00e676, #1b5e20);
+            color: #fff;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 17px;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 25px rgba(0, 230, 118, 0.5);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: all 0.6s ease;
+        }
+        .btn:hover::before { left: 100%; }
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 230, 118, 0.8), 0 0 15px #00e676;
+        }
+
+        /* LỚP SÓNG BIỂN TRẮNG */
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            left: 0;
+            z-index: 1;
+        }
+        .wave {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+            position: absolute;
+            bottom: 0;
+            width: 200%;
+            height: 60px;
+            animation: wave-motion 10s linear infinite;
+        }
+        @keyframes wave-motion {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* INFO BOXES */
+        .info-section { padding: 80px 0; }
+        .grid-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+        .info-box {
+            padding: 40px 25px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(76, 175, 80, 0.2);
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .info-box:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.98);
+            border-color: #00e676;
+            box-shadow: 0 15px 35px rgba(46, 125, 50, 0.2), 0 0 15px rgba(0, 230, 118, 0.2);
+        }
+        .info-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .info-box:hover .info-icon { transform: scale(1.25) rotate(10deg); }
+        .info-box h3 {
+            color: #1b5e20;
+            margin-bottom: 12px;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        /* MENU NGON */
+        .menu-preview {
+            padding: 90px 0;
+            background: #fff;
+            border-radius: 40px 40px 0 0;
+            box-shadow: 0 -15px 40px rgba(46, 125, 50, 0.05);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 60px;
+            color: #1b5e20;
+            font-weight: 900;
+            position: relative;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(0, 230, 118, 0.3), 1px 1px 2px rgba(0,0,0,0.15);
+        }
+        .section-title::after {
+            content: '🦞';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            background: #fff;
+            padding: 0 15px;
+            z-index: 2;
+        }
+        .section-title::before {
+            content: '';
+            width: 180px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #00e676, transparent);
+            position: absolute;
+            bottom: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .grid-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .menu-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            border: 1px solid rgba(76, 175, 80, 0.1);
+        }
+        .menu-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 45px rgba(46, 125, 50, 0.22);
+            border-color: #00e676;
+        }
+        .img-container {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        .menu-img {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s ease;
+        }
+        .menu-card:hover .menu-img { transform: scale(1.1); }
+        
+        .food-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, #1b5e20, #00e676);
+            box-shadow: 0 4px 12px rgba(0, 230, 118, 0.4);
+            color: #fff;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 30px;
+            z-index: 2;
+            letter-spacing: 0.5px;
+        }
+        .menu-desc { padding: 25px; }
+        .menu-desc h4 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #1b5e20;
+            font-weight: 800;
+        }
+        .price-tag {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px dashed #c8e6c9;
+            padding-top: 18px;
+            margin-top: 10px;
+        }
+        .price {
+            color: #2e7d32;
+            font-weight: 900;
+            font-size: 21px;
+            text-shadow: 0.5px 0.5px 0px #c8e6c9;
+        }
+        .order-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #00e676;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.8);
+            animation: pulse 1.6s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.8); }
+            70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(0, 230, 118, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+        }
+
+        /* REVIEWS SECTION */
+        .reviews-section {
+            background-color: rgba(232, 245, 233, 0.85);
+            padding: 90px 0;
+            border-radius: 0 0 40px 40px;
+        }
+        .rating-summary {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .rating-big {
+            font-size: 68px;
+            font-weight: 900;
+            color: #1b5e20;
+            line-height: 1;
+            text-shadow: 2px 2px 0px #a5d6a7, 4px 4px 0px rgba(0,0,0,0.05), 0 0 15px rgba(0,230,118,0.2);
+        }
+        .stars { color: #ffb300; font-size: 24px; }
+        
+        .grid-reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .review-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+            position: relative;
+            border: 2px solid rgba(255,255,255,0.8);
+            transition: border-color 0.3s;
+        }
+        .review-card:hover { border-color: #00e676; }
+        .review-card::before {
+            content: '“';
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 65px;
+            color: #c8e6c9;
+            font-family: Georgia, serif;
+        }
+        .reviewer {
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1b5e20;
+        }
+        .badge {
+            font-size: 11px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 700;
+        }
+
+        /* FOOTER & CONTACT */
+        footer {
+            background: linear-gradient(135deg, #0a220b, #123e14);
+            color: #fff;
+            padding: 80px 0 30px 0;
+            margin-top: 40px;
+            border-top: 3px solid #00e676;
+            box-shadow: 0 -10px 35px rgba(0, 230, 118, 0.15);
+        }
+        .grid-footer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+        .footer-box h3 {
+            color: #a5d6a7;
+            margin-bottom: 25px;
+            font-size: 23px;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        .footer-box h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3.5px;
+            background: #00e676;
+            box-shadow: 0 0 8px #00e676;
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        .footer-box p {
+            margin-bottom: 14px;
+            color: #e8f5e9;
+            font-size: 15px;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            margin-top: 50px;
+            color: #81c784;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE TRÊN ĐIỆN THOẠI */
+        @media (max-width: 950px) {
+            .navbar { flex-direction: column; gap: 15px; padding: 15px 0; }
+            .nav-block { width: 100%; justify-content: center !important; }
+            .logo-center { width: 100%; order: -1; }
+            .logo-img { height: 110px; }
+            .hero { margin-top: 220px; }
+        }
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 38px; text-shadow: 0 2px 0 #bbb, 0 5px 10px rgba(0,0,0,0.3); }
+            .hero-content p { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <ul class="nav-block left">
+                <li><a href="#trangchu">Trang chủ</a></li>
+                <li><a href="#gioithieu">Giới thiệu</a></li>
+            </ul>
+            
+            <div class="logo-center">
+                <a href="#trangchu">
+                    <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFr5VjYtCqxKqoRRCtxftP7iBN39Oan8wYw3RHDno1aA&s=10" alt="Logo Phố Nướng Châu Đốc">
+                </a>
+            </div>
+            
+            <ul class="nav-block right">
+                <li><a href="#monan">Món ngon</a></li>
+                <li><a href="#danhgia">Đánh giá</a></li>
+                <li><a href="#lienhe">Liên hệ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="trangchu">
+        <div class="hero-content">
+            <h1>Quán Hải Sản Phố Nướng</h1>
+            <p>Tiệm Hải Sản Đông Nhất & Ổn Nhất Tại Châu Đốc - An Giang</p>
+            
+            <button class="btn" onclick="showPhoneNumber()">Đặt Bàn Ngay</button>
+        </div>
+        <div class="wave-container">
+            <div class="wave"></div>
+        </div>
+    </section>
+
+    <section class="info-section" id="gioithieu">
+        <div class="container grid-info">
+            <div class="info-box">
+                <span class="info-icon">🏡</span>
+                <h3>Không Gian Rộng Rãi</h3>
+                <p>Không gian siêu rộng, thoáng mát, có phòng riêng ấm cúng cho nhóm/gia đình và bãi đậu xe ô tô rộng rãi thoải mái.</p>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">⭐</span>
+                <h3>Phục Vụ Đỉnh Cao</h3>
+                <p>Đội ngũ nhân viên trẻ trung, cực kỳ dễ thương và nhanh nhẹn. Chu đáo chuẩn bị sẵn ghế ngồi riêng tiện lợi cho em bé.</p>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">⚓</span>
+                <h3>Hải Sản Tươi Sống</h3>
+                <p>Nguyên liệu tuyển chọn tươi sống 100% tại hồ, chế biến vừa miệng, đậm đà vị biển. Giá cả niêm yết công khai rõ ràng.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-preview" id="monan">
+        <div class="container">
+            <h2 class="section-title">Món Ngon Đặc Sắc</h2>
+            <div class="grid-menu">
+                <div class="menu-card">
+                    <span class="food-badge">Bán chạy 🔥</span>
+                    <div class="img-container">
+                        <div class="menu-img" style="background-image: url('https://bazantravel.com/cdn/medias/uploads/28/28311-tom-cang-xanh.jpg');"></div>
+                    </div>
+                    <div class="menu-desc">
+                        <h4>Tôm Càng Xanh Nướng</h4>
+                        <p>Tôm càng xanh chọn lọc tại hồ, thịt chắc ngọt lịm nướng mọi hoặc nướng muối ớt thơm nức mũi.</p>
+                        <div class="price-tag">
+                            <span class="price">Theo thời giá</span>
+                            <span class="order-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <span class="food-badge">Tươi sống 活</span>
+                    <div class="img-container">
+                        <div class="menu-img" style="background-image: url('https://www.haisanhanoi.net/images/cua/cua-bien/cua-bien-03_605cb.jpg');"></div>
+                    </div>
+                    <div class="menu-desc">
+                        <h4>Cua Biển Loại I</h4>
+                        <p>Cua chắc thịt, đầy gạch tươi rói. Khách tùy chọn chế biến hấp bia, rang me hảo hạng hoặc sốt cháy tỏi.</p>
+                        <div class="price-tag">
+                            <span class="price">Niêm yết tại hồ</span>
+                            <span class="order-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <span class="food-badge">Hot Đổi Vị ✨</span>
+                    <div class="img-container">
+                        <div class="menu-img" style="background-image: url('https://loptiengnhat.edu.vn/wp-content/uploads/2016/11/tim-hieu-ve-mon-sashimi-nhat-ban.jpg');"></div>
+                    </div>
+                    <div class="menu-desc">
+                        <h4>Sashimi Tươi Sống</h4>
+                        <p>Từng lát hải sản tươi lạnh, ngọt thanh thái chuẩn nghệ thuật, dùng kèm mù tạt sực nức tê đầu lưỡi.</p>
+                        <div class="price-tag">
+                            <span class="price">Món ngon mỗi ngày</span>
+                            <span class="order-dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section" id="danhgia">
+        <div class="container">
+            <h2 class="section-title">Khách Hàng Nói Về Chúng Tôi</h2>
+            <div class="rating-summary">
+                <div class="rating-big">3.9 / 5</div>
+                <div class="stars">★★★★☆</div>
+                <p>Dựa trên <strong>457 đánh giá</strong> thực tế từ Google Maps</p>
+            </div>
+            
+            <div class="grid-reviews">
+                <div class="review-card">
+                    <div class="reviewer">
+                        <span>Minh Bùi Đức</span>
+                        <span class="badge">Local Guide</span>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Quán không gian siêu rộng, thoáng mát, có chỗ đậu xe hơi. Nhân viên xuất sắc xứng đáng 11 điểm, phục vụ rất nhiệt tình, có ghế em bé."</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">
+                        <span>Nguyen Nghia</span>
+                        <span class="badge">Local Guide</span>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Bản thân mình thấy đây là tiệm hải sản ổn nhất ở Châu Đốc, giá cả đi kèm chất lượng. Có phòng riêng cho nhóm bạn hoặc gia đình."</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">
+                        <span>Danh thue Linh</span>
+                        <span class="badge">Khách hàng</span>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Đồ ăn ngon giá cả hợp lý với mặt bằng chung. Phục vụ tư vấn nhiệt tình thân thiện không khí mát mẻ, trang bị quạt đầy đủ."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="lienhe">
+        <div class="container grid-footer">
+            <div class="footer-box">
+                <h3>PHỐ NƯỚNG CHÂU ĐỐC</h3>
+                <p>Điểm đến ẩm thực lý tưởng của gia đình, bạn bè và du khách khi ghé thăm vùng đất tâm linh Châu Đốc, An Giang.</p>
+                <p>💵 <b>Chi phí:</b> 200.000đ - 600.000đ / người</p>
+            </div>
+            <div class="footer-box">
+                <h3>Liên Hệ Đặt Bàn</h3>
+                <p>📍 <b>Địa chỉ:</b> 231 Trưng Nữ Vương, Châu Phú B, Châu Đốc, An Giang</p>
+                <p>📞 <b>Hotline:</b> 0918 160 220 - 0939 461 122</p>
+                <p>🌐 <b>Facebook:</b> Hải sản Phố Nướng Châu Đốc</p>
+            </div>
+            <div class="footer-box">
+                <h3>Giờ Hoạt Động</h3>
+                <p>📅 Mở cửa tất cả các ngày trong tuần</p>
+                <p>⏰ <b>Thời gian:</b> Mở cửa đến 22:00 hàng ngày</p>
+                <p>🚗 <b>Tiện ích:</b> Có phòng lạnh, bãi đậu xe ô tô lớn miễn phí.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Quán Hải Sản Phố Nướng Châu Đốc. Toàn bộ dữ liệu được đồng bộ chính xác từ Google Business.
+        </div>
+    </footer>
+
+    <script>
+        function showPhoneNumber() {
+            const phoneNumber = "0918160220";
+            
+            // Kiểm tra xem người dùng đang sử dụng thiết bị di động hay máy tính
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // Di động: Kích hoạt cuộc gọi thẳng
+                window.location.href = "tel:" + phoneNumber;
+            } else {
+                // Máy tính: Hiển thị hộp thoại thông báo số điện thoại sang trọng
+                alert("☎️ Quý khách vui lòng liên hệ Hotline: 0918 160 220 để đặt bàn nhanh nhất!");
+            }
+        }
+    </script>
+
+</body>
+</html>
